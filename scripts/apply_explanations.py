@@ -6,13 +6,23 @@ from pathlib import Path
 
 
 LABELS = {"ア", "イ", "ウ", "エ"}
-YEARS = (2021, 2022, 2023, 2024)
+EXAM_IDS = (
+    "2015-autumn-sm-am2",
+    "2016-autumn-sm-am2",
+    "2017-autumn-sm-am2",
+    "2018-autumn-sm-am2",
+    "2019-autumn-sm-am2",
+    "2021-spring-sm-am2",
+    "2022-spring-sm-am2",
+    "2023-spring-sm-am2",
+    "2024-spring-sm-am2",
+)
 
 
 def main() -> None:
     errors: list[str] = []
-    for year in YEARS:
-        exam_id = f"{year}-spring-sm-am2"
+    for exam_id in EXAM_IDS:
+        year = exam_id.split("-", 1)[0]
         exam_path = Path("data/exams") / f"{exam_id}.json"
         explanation_path = Path("data/explanations") / f"{exam_id}.json"
         exam = json.loads(exam_path.read_text(encoding="utf-8"))
@@ -47,7 +57,7 @@ def main() -> None:
 
     if errors:
         raise SystemExit("\n".join(errors))
-    print("Applied and validated reviewed explanations for 2021-2024.")
+    print("Applied and validated reviewed explanations for 2015-2019 and 2021-2024.")
 
 
 if __name__ == "__main__":

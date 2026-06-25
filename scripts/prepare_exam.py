@@ -54,6 +54,22 @@ MANUAL_CHOICE_PATCHES_BY_EXAM = {
         },
         17: {"イ": "120"},
     },
+    "2018-autumn-sm-am2": {
+        7: {
+            "ア": "規格の適用範囲内のソフトウェアを使用する上で必要となる特性をもつハードウェア資産は規格の適用範囲に含むが、必要となる特性をもたないハードウェア資産は含まない。",
+        },
+    },
+    "2019-autumn-sm-am2": {
+        3: {
+            "イ": "サービス・カタログは、一つのサービス・ポートフォリオに対して一つであり、1対1に対応している。",
+        },
+    },
+}
+
+MANUAL_QUESTION_PATCHES_BY_EXAM = {
+    "2018-autumn-sm-am2": {
+        10: "問10 図は、ITサービスを提供するサプライチェーン関係の例である。JIS Q 20000-1:2012（サービスマネジメントシステム要求事項）の供給者管理プロセスにおける、サービス提供者の統括供給者に対する管理責任に関する記述のうち、適切なものはどれか。",
+    },
 }
 
 MANUAL_FIGURE_CROPS_BY_EXAM = {
@@ -439,6 +455,7 @@ def build_exam(
         raw_text = question_slice.raw_text
         prompt, choices = split_prompt_and_choices(raw_text)
         prompt = trim_prompt_for_figure(exam_id, question_no, prompt)
+        prompt = MANUAL_QUESTION_PATCHES_BY_EXAM.get(exam_id, {}).get(question_no, prompt)
         choices.update(choice_patches.get(question_no, {}))
         questions.append(
             {
