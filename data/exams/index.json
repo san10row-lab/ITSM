@@ -1,0 +1,52 @@
+[
+  {
+    "id": "2025-spring-sm-am2",
+    "title": "2025年 春期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2025-spring-sm-am2.json"
+  },
+  {
+    "id": "2024-spring-sm-am2",
+    "title": "2024年 春期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2024-spring-sm-am2.json"
+  },
+  {
+    "id": "2023-spring-sm-am2",
+    "title": "2023年 春期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2023-spring-sm-am2.json"
+  },
+  {
+    "id": "2022-spring-sm-am2",
+    "title": "2022年 春期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2022-spring-sm-am2.json"
+  },
+  {
+    "id": "2021-spring-sm-am2",
+    "title": "2021年 春期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2021-spring-sm-am2.json"
+  },
+  {
+    "id": "2019-autumn-sm-am2",
+    "title": "2019年 秋期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2019-autumn-sm-am2.json"
+  },
+  {
+    "id": "2018-autumn-sm-am2",
+    "title": "2018年 秋期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2018-autumn-sm-am2.json"
+  },
+  {
+    "id": "2017-autumn-sm-am2",
+    "title": "2017年 秋期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2017-autumn-sm-am2.json"
+  },
+  {
+    "id": "2016-autumn-sm-am2",
+    "title": "2016年 秋期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2016-autumn-sm-am2.json"
+  },
+  {
+    "id": "2015-autumn-sm-am2",
+    "title": "2015年 秋期 ITサービスマネージャ 午前II",
+    "path": "data/exams/2015-autumn-sm-am2.json"
+  }
+]

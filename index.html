@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ITSM 午前II 過去問</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">IT Service Manager AM2</p>
+        <h1>午前II 過去問トレーナー</h1>
+      </div>
+      <div class="stats-strip" aria-live="polite">
+        <div><span id="totalAnswered">0</span><small>回答</small></div>
+        <div><span id="accuracy">-</span><small>正答率</small></div>
+        <div><span id="wrongCount">0</span><small>直前ミス</small></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel controls">
+        <label class="field">
+          <span>試験回</span>
+          <select id="examSelect"></select>
+        </label>
+
+        <div class="segmented" role="group" aria-label="出題モード">
+          <button class="mode-button active" data-mode="all" type="button">全問</button>
+          <button class="mode-button" data-mode="random" type="button">ランダム</button>
+          <button class="mode-button" data-mode="wrong" type="button">直前ミス</button>
+        </div>
+
+        <button id="startButton" class="primary-button" type="button">開始</button>
+        <button id="resetButton" class="ghost-button" type="button">履歴をリセット</button>
+
+        <section class="mini-section">
+          <h2>進行</h2>
+          <div id="progressList" class="progress-list"></div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div id="emptyState" class="empty-state">
+          <h2>2025年分で検証できます</h2>
+          <p>PDFからOCRした問題テキストで、問番号ごとに回答します。</p>
+        </div>
+
+        <article id="quizCard" class="quiz-card hidden">
+          <div class="question-bar">
+            <div>
+              <p id="sourceLabel" class="source-label"></p>
+              <h2 id="questionTitle"></h2>
+            </div>
+            <div id="questionPosition" class="position-label"></div>
+          </div>
+
+          <div class="question-text-panel">
+            <p id="questionText" class="question-text"></p>
+            <div id="figureList" class="figure-list"></div>
+            <div id="choiceList" class="choice-list" role="group" aria-label="回答を選択"></div>
+          </div>
+
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+          <section id="explanationPanel" class="explanation-panel hidden" aria-live="polite"></section>
+
+          <div class="nav-row">
+            <button id="prevButton" class="ghost-button" type="button">前へ</button>
+            <button id="nextButton" class="primary-button" type="button">次へ</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
