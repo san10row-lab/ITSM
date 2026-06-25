@@ -54,7 +54,7 @@ function shuffle(items) {
 }
 
 async function loadIndex() {
-  const res = await fetch("data/exams/index.json");
+  const res = await fetch("data/exams/index.json", { cache: "no-store" });
   if (!res.ok) throw new Error("試験データの一覧を読み込めませんでした。");
   state.exams = await res.json();
   els.examSelect.innerHTML = state.exams
@@ -64,7 +64,7 @@ async function loadIndex() {
 
 async function loadExam(id) {
   const meta = state.exams.find((exam) => exam.id === id);
-  const res = await fetch(meta.path);
+  const res = await fetch(meta.path, { cache: "no-store" });
   if (!res.ok) throw new Error("試験データを読み込めませんでした。");
   state.exam = await res.json();
 }
