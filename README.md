@@ -53,6 +53,29 @@ python3 -m http.server 8000
 
 ブラウザで `http://localhost:8000` を開きます。
 
+## GitHub Pagesで公開
+
+`main`ブランチへpushすると、`.github/workflows/pages.yml`が静的ファイルを作成してGitHub Pagesへデプロイします。
+
+初回だけ、GitHubリポジトリの `Settings` → `Pages` → `Build and deployment` → `Source` を `GitHub Actions` に設定します。
+
+公開対象は次のファイルだけです。
+
+- `index.html`
+- `app.js`
+- `styles.css`
+- `data/exams/`
+- `data/assets/`
+
+ローカルで公開物を確認する場合は、次を実行します。
+
+```sh
+bash scripts/build_pages.sh
+python3 -m http.server 8000 --directory _site
+```
+
+アプリ内のファイル参照は相対パスなので、`https://ユーザー名.github.io/リポジトリ名/`のようなプロジェクトサイトでも動作します。
+
 ## 解説データ
 
 - 2015～2019年及び2021～2024年は、全25問にレビュー済みの選択肢別解説があります。
