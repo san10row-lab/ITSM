@@ -34,6 +34,12 @@
 
         <button id="startButton" class="primary-button" type="button">開始</button>
         <button id="resetButton" class="ghost-button" type="button">履歴をリセット</button>
+        <div class="history-actions">
+          <button id="exportHistoryButton" class="ghost-button" type="button">履歴を書き出し</button>
+          <button id="importHistoryButton" class="ghost-button" type="button">履歴を読み込み</button>
+          <input id="historyFileInput" class="visually-hidden" type="file" accept=".json,.txt,application/json,text/plain">
+        </div>
+        <p id="historyStatus" class="history-status" aria-live="polite"></p>
 
         <section class="mini-section">
           <h2>進行</h2>
@@ -73,6 +79,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=2"></script>
+    <script src="app.js?v=3"></script>
   </body>
 </html>

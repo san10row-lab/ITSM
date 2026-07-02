@@ -11,6 +11,10 @@ const els = {
   examSelect: document.querySelector("#examSelect"),
   startButton: document.querySelector("#startButton"),
   resetButton: document.querySelector("#resetButton"),
+  exportHistoryButton: document.querySelector("#exportHistoryButton"),
+  importHistoryButton: document.querySelector("#importHistoryButton"),
+  historyFileInput: document.querySelector("#historyFileInput"),
+  historyStatus: document.querySelector("#historyStatus"),
   modeButtons: [...document.querySelectorAll(".mode-button")],
   emptyState: document.querySelector("#emptyState"),
   quizCard: document.querySelector("#quizCard"),
@@ -31,17 +35,103 @@ const els = {
 };
 
 const storageKey = "itsm-am2-progress-v1";
+const historyExportVersion = 1;
 
 function readProgress() {
   try {
-    return JSON.parse(localStorage.getItem(storageKey)) || { answers: {}, lastWrong: [] };
+    return normalizeProgress(JSON.parse(localStorage.getItem(storageKey)));
   } catch {
     return { answers: {}, lastWrong: [] };
   }
 }
 
 function writeProgress(progress) {
-  localStorage.setItem(storageKey, JSON.stringify(progress));
+  localStorage.setItem(storageKey, JSON.stringify(normalizeProgress(progress)));
+}
+
+function normalizeProgress(progress) {
+  if (!progress || typeof progress !== "object") return { answers: {}, lastWrong: [] };
+  const answers = progress.answers && typeof progress.answers === "object" ? progress.answers : {};
+  const lastWrong = Array.isArray(progress.lastWrong) ? progress.lastWrong.filter(Boolean) : [];
+  return { answers, lastWrong };
+}
+
+function setHistoryStatus(message, isError = false) {
+  els.historyStatus.textContent = message;
+  els.historyStatus.classList.toggle("error", isError);
+}
+
+function exportHistory() {
+  const progress = readProgress();
+  const payload = {
+    app: "itsm-am2-trainer",
+    version: historyExportVersion,
+    exportedAt: new Date().toISOString(),
+    progress,
+  };
+  const text = JSON.stringify(payload, null, 2);
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const date = new Date().toISOString().slice(0, 10).replaceAll("-", "");
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = `itsm-am2-history-${date}.txt`;
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+  URL.revokeObjectURL(url);
+  setHistoryStatus("履歴ファイルを書き出しました。");
+}
+
+function parseHistoryFile(text) {
+  const parsed = JSON.parse(text);
+  if (parsed?.app === "itsm-am2-trainer" && parsed.progress) {
+    return normalizeProgress(parsed.progress);
+  }
+  return normalizeProgress(parsed);
+}
+
+function mergeProgress(current, imported) {
+  const merged = normalizeProgress(current);
+  const importedProgress = normalizeProgress(imported);
+  let importedCount = 0;
+
+  Object.entries(importedProgress.answers).forEach(([id, record]) => {
+    if (!record || typeof record !== "object") return;
+    const existing = merged.answers[id];
+    if (!existing || isImportedNewer(existing, record)) {
+      merged.answers[id] = record;
+      importedCount += 1;
+    }
+  });
+
+  merged.lastWrong = [...new Set([...(merged.lastWrong || []), ...(importedProgress.lastWrong || [])])];
+  return { progress: merged, importedCount };
+}
+
+function isImportedNewer(existing, imported) {
+  if (!existing?.answeredAt) return true;
+  if (!imported?.answeredAt) return false;
+  return new Date(imported.answeredAt).getTime() >= new Date(existing.answeredAt).getTime();
+}
+
+async function importHistoryFile(file) {
+  if (!file) return;
+  try {
+    const imported = parseHistoryFile(await file.text());
+    const { progress, importedCount } = mergeProgress(readProgress(), imported);
+    writeProgress(progress);
+    state.sessionResults = {};
+    renderStats();
+    renderProgress();
+    renderQuestion();
+    setHistoryStatus(`${importedCount}件の回答履歴を読み込みました。`);
+  } catch (error) {
+    console.error(error);
+    setHistoryStatus("履歴ファイルを読み込めませんでした。", true);
+  } finally {
+    els.historyFileInput.value = "";
+  }
 }
 
 function shuffle(items) {
@@ -279,6 +369,13 @@ function bindEvents() {
     state.sessionResults = {};
     renderStats();
     renderProgress();
+  });
+  els.exportHistoryButton.addEventListener("click", exportHistory);
+  els.importHistoryButton.addEventListener("click", () => {
+    els.historyFileInput.click();
+  });
+  els.historyFileInput.addEventListener("change", (event) => {
+    importHistoryFile(event.target.files?.[0]);
   });
   els.choiceList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-answer]");
