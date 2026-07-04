@@ -21,6 +21,7 @@ const els = {
   sourceLabel: document.querySelector("#sourceLabel"),
   questionTitle: document.querySelector("#questionTitle"),
   questionPosition: document.querySelector("#questionPosition"),
+  ocrFlagButton: document.querySelector("#ocrFlagButton"),
   questionText: document.querySelector("#questionText"),
   figureList: document.querySelector("#figureList"),
   choiceList: document.querySelector("#choiceList"),
@@ -41,7 +42,7 @@ function readProgress() {
   try {
     return normalizeProgress(JSON.parse(localStorage.getItem(storageKey)));
   } catch {
-    return { answers: {}, lastWrong: [] };
+    return emptyProgress();
   }
 }
 
@@ -49,11 +50,16 @@ function writeProgress(progress) {
   localStorage.setItem(storageKey, JSON.stringify(normalizeProgress(progress)));
 }
 
+function emptyProgress() {
+  return { answers: {}, lastWrong: [], flags: {} };
+}
+
 function normalizeProgress(progress) {
-  if (!progress || typeof progress !== "object") return { answers: {}, lastWrong: [] };
+  if (!progress || typeof progress !== "object") return emptyProgress();
   const answers = progress.answers && typeof progress.answers === "object" ? progress.answers : {};
   const lastWrong = Array.isArray(progress.lastWrong) ? progress.lastWrong.filter(Boolean) : [];
-  return { answers, lastWrong };
+  const flags = progress.flags && typeof progress.flags === "object" ? progress.flags : {};
+  return { answers, lastWrong, flags };
 }
 
 function setHistoryStatus(message, isError = false) {
@@ -95,6 +101,7 @@ function mergeProgress(current, imported) {
   const merged = normalizeProgress(current);
   const importedProgress = normalizeProgress(imported);
   let importedCount = 0;
+  let importedFlagCount = 0;
 
   Object.entries(importedProgress.answers).forEach(([id, record]) => {
     if (!record || typeof record !== "object") return;
@@ -106,26 +113,36 @@ function mergeProgress(current, imported) {
   });
 
   merged.lastWrong = [...new Set([...(merged.lastWrong || []), ...(importedProgress.lastWrong || [])])];
-  return { progress: merged, importedCount };
+  Object.entries(importedProgress.flags).forEach(([id, flag]) => {
+    if (!flag || typeof flag !== "object") return;
+    const existing = merged.flags[id];
+    if (!existing || isImportedNewer(existing, flag)) {
+      merged.flags[id] = flag;
+      importedFlagCount += 1;
+    }
+  });
+  return { progress: merged, importedCount, importedFlagCount };
 }
 
 function isImportedNewer(existing, imported) {
-  if (!existing?.answeredAt) return true;
-  if (!imported?.answeredAt) return false;
-  return new Date(imported.answeredAt).getTime() >= new Date(existing.answeredAt).getTime();
+  const existingTime = existing?.answeredAt || existing?.markedAt;
+  const importedTime = imported?.answeredAt || imported?.markedAt;
+  if (!existingTime) return true;
+  if (!importedTime) return false;
+  return new Date(importedTime).getTime() >= new Date(existingTime).getTime();
 }
 
 async function importHistoryFile(file) {
   if (!file) return;
   try {
     const imported = parseHistoryFile(await file.text());
-    const { progress, importedCount } = mergeProgress(readProgress(), imported);
+    const { progress, importedCount, importedFlagCount } = mergeProgress(readProgress(), imported);
     writeProgress(progress);
     state.sessionResults = {};
     renderStats();
     renderProgress();
     renderQuestion();
-    setHistoryStatus(`${importedCount}件の回答履歴を読み込みました。`);
+    setHistoryStatus(`${importedCount}件の回答履歴、${importedFlagCount}件のOCRマークを読み込みました。`);
   } catch (error) {
     console.error(error);
     setHistoryStatus("履歴ファイルを読み込めませんでした。", true);
@@ -193,11 +210,14 @@ function renderProgress() {
   els.progressList.innerHTML = state.queue
     .map((question, idx) => {
       const record = progress.answers?.[question.id];
+      const flag = progress.flags?.[question.id];
       const classes = ["progress-pill"];
       if (idx === state.index) classes.push("current");
       if (record?.correct) classes.push("correct");
       if (record && !record.correct) classes.push("wrong");
-      return `<button type="button" class="${classes.join(" ")}" data-index="${idx}">${question.questionNo}</button>`;
+      if (flag) classes.push("flagged");
+      const flagMark = flag ? `<span class="progress-flag-mark" aria-label="OCR要確認">!</span>` : "";
+      return `<button type="button" class="${classes.join(" ")}" data-index="${idx}">${question.questionNo}${flagMark}</button>`;
     })
     .join("");
 }
@@ -219,6 +239,7 @@ function renderQuestion() {
   els.sourceLabel.textContent = question.source;
   els.questionTitle.textContent = `問${question.questionNo}`;
   els.questionPosition.textContent = `${state.index + 1} / ${state.queue.length}`;
+  renderOcrFlagButton(question);
   els.questionText.textContent = question.question || question.rawText || "問題文を読み込めませんでした。";
   els.figureList.innerHTML = renderFigures(question.figures || []);
   els.choiceList.innerHTML = renderChoices(question.choices || {});
@@ -230,6 +251,14 @@ function renderQuestion() {
   els.nextButton.textContent = state.index === state.queue.length - 1 ? "終了" : "次へ";
   renderStats();
   renderProgress();
+}
+
+function renderOcrFlagButton(question) {
+  const progress = readProgress();
+  const flagged = Boolean(progress.flags?.[question.id]);
+  els.ocrFlagButton.classList.toggle("active", flagged);
+  els.ocrFlagButton.setAttribute("aria-pressed", String(flagged));
+  els.ocrFlagButton.textContent = flagged ? "OCR確認マーク済み" : "OCR要確認";
 }
 
 function renderFigures(figures) {
@@ -302,6 +331,24 @@ function answerQuestion(answer) {
   renderProgress();
 }
 
+function toggleOcrFlag() {
+  const question = currentQuestion();
+  if (!question) return;
+  const progress = readProgress();
+  progress.flags ||= {};
+  if (progress.flags[question.id]) {
+    delete progress.flags[question.id];
+  } else {
+    progress.flags[question.id] = {
+      type: "ocr",
+      markedAt: new Date().toISOString(),
+    };
+  }
+  writeProgress(progress);
+  renderOcrFlagButton(question);
+  renderProgress();
+}
+
 function renderExplanation(question, selectedAnswer) {
   const explanation = question.explanation;
   if (!explanation || typeof explanation !== "object") {
@@ -365,11 +412,12 @@ function bindEvents() {
 
   els.startButton.addEventListener("click", start);
   els.resetButton.addEventListener("click", () => {
-    writeProgress({ answers: {}, lastWrong: [] });
+    writeProgress(emptyProgress());
     state.sessionResults = {};
     renderStats();
     renderProgress();
   });
+  els.ocrFlagButton.addEventListener("click", toggleOcrFlag);
   els.exportHistoryButton.addEventListener("click", exportHistory);
   els.importHistoryButton.addEventListener("click", () => {
     els.historyFileInput.click();
