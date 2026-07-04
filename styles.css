@@ -529,6 +529,10 @@ select {
   background: var(--accent-soft);
 }
 
+.choice-item.selected {
+  box-shadow: inset 0 0 0 2px rgba(35, 92, 82, 0.22);
+}
+
 .choice-item:focus-visible {
   outline: 3px solid rgba(35, 92, 82, 0.2);
   outline-offset: 2px;
@@ -569,6 +573,21 @@ select {
 .choice-item p {
   margin: 4px 0 0;
   line-height: 1.7;
+}
+
+.answer-row {
+  position: sticky;
+  bottom: -22px;
+  z-index: 2;
+  display: grid;
+  padding: 12px 0 0;
+  background: linear-gradient(rgba(251, 252, 250, 0), #fbfcfa 24px, #fbfcfa);
+}
+
+.answer-row .primary-button:disabled {
+  cursor: not-allowed;
+  background: #c9d0ca;
+  color: #eef2ed;
 }
 
 .nav-row {

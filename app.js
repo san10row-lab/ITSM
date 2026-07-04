@@ -5,6 +5,7 @@ const state = {
   queue: [],
   index: 0,
   sessionResults: {},
+  selectedAnswer: null,
 };
 
 const els = {
@@ -25,6 +26,7 @@ const els = {
   questionText: document.querySelector("#questionText"),
   figureList: document.querySelector("#figureList"),
   choiceList: document.querySelector("#choiceList"),
+  submitAnswerButton: document.querySelector("#submitAnswerButton"),
   feedback: document.querySelector("#feedback"),
   explanationPanel: document.querySelector("#explanationPanel"),
   prevButton: document.querySelector("#prevButton"),
@@ -243,8 +245,11 @@ function renderQuestion() {
   els.questionText.textContent = question.question || question.rawText || "問題文を読み込めませんでした。";
   els.figureList.innerHTML = renderFigures(question.figures || []);
   els.choiceList.innerHTML = renderChoices(question.choices || {});
+  state.selectedAnswer = null;
+  els.submitAnswerButton.disabled = true;
+  els.submitAnswerButton.textContent = "回答する";
   els.feedback.className = "feedback";
-  els.feedback.textContent = "選択肢を選んでください。問題文はOCRで抽出したテキストです。";
+  els.feedback.textContent = "選択肢を選んでから、回答するボタンで判定してください。";
   els.explanationPanel.classList.add("hidden");
   els.explanationPanel.innerHTML = "";
   els.prevButton.disabled = state.index === 0;
@@ -278,13 +283,29 @@ function renderChoices(choices) {
     .map((label) => {
       const text = choices[label] || "未抽出";
       return `
-        <button type="button" class="choice-item" data-answer="${label}">
+        <button type="button" class="choice-item" data-answer="${label}" aria-pressed="false">
           <span>${label}</span>
           <p>${escapeHtml(text)}</p>
         </button>
       `;
     })
     .join("");
+}
+
+function selectChoice(answer) {
+  const question = currentQuestion();
+  const answerButtons = [...els.choiceList.querySelectorAll("[data-answer]")];
+  if (!question || answerButtons.some((button) => button.disabled)) return;
+
+  state.selectedAnswer = answer;
+  answerButtons.forEach((button) => {
+    const selected = button.dataset.answer === answer;
+    button.classList.toggle("selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+  els.submitAnswerButton.disabled = false;
+  els.feedback.className = "feedback";
+  els.feedback.textContent = `${answer} を選択中です。回答するボタンで判定します。`;
 }
 
 function escapeHtml(value) {
@@ -299,7 +320,7 @@ function escapeHtml(value) {
 function answerQuestion(answer) {
   const question = currentQuestion();
   const answerButtons = [...els.choiceList.querySelectorAll("[data-answer]")];
-  if (!question || answerButtons.some((button) => button.disabled)) return;
+  if (!question || !answer || answerButtons.some((button) => button.disabled)) return;
 
   const correct = answer === question.answer;
   const progress = readProgress();
@@ -322,6 +343,8 @@ function answerQuestion(answer) {
     if (value === answer && !correct) button.classList.add("wrong");
     if (value === answer) button.classList.add("selected");
   });
+  els.submitAnswerButton.disabled = true;
+  els.submitAnswerButton.textContent = "回答済み";
   els.feedback.className = `feedback ${correct ? "correct" : "wrong"}`;
   els.feedback.textContent = correct
     ? `正解です。答えは ${question.answer} です。`
@@ -428,7 +451,10 @@ function bindEvents() {
   els.choiceList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-answer]");
     if (!button) return;
-    answerQuestion(button.dataset.answer);
+    selectChoice(button.dataset.answer);
+  });
+  els.submitAnswerButton.addEventListener("click", () => {
+    answerQuestion(state.selectedAnswer);
   });
   els.prevButton.addEventListener("click", () => {
     if (state.index > 0) {
