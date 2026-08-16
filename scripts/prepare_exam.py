@@ -442,11 +442,13 @@ def build_exam(
     era: str = "",
     season: str = "",
     explanations: dict[int, dict] | None = None,
+    categories: dict[int, str] | None = None,
 ) -> dict:
     questions = []
     page_text = page_text or {}
     figures = figures or {}
     explanations = explanations or {}
+    categories = categories or {}
     question_slices = slice_questions(page_text)
     choice_patches = MANUAL_CHOICE_PATCHES_BY_EXAM.get(exam_id, {})
     for question_no in range(1, 26):
@@ -468,7 +470,7 @@ def build_exam(
                 "figures": figures.get(question_no, []),
                 "hasFigureHint": has_figure_hint(question_no, prompt, figures),
                 "answer": answers[question_no],
-                "category": None,
+                "category": categories.get(question_no),
                 "explanation": explanations.get(question_no),
                 "source": f"{era} {season} ITサービスマネージャ試験 午前II 問{question_no}".strip(),
             }
@@ -485,8 +487,8 @@ def build_exam(
         "questionCount": 25,
         "notes": (
             "問題PDFは画像OCRでテキスト化。図表が必要な問題は切り抜き画像を併用。"
-            + ("選択肢別解説はレビュー済み。分野分類は未実施。"
-               if explanations else "解説、分野分類は未実施。")
+            + ("選択肢別解説はレビュー済み。" if explanations else "解説は未実施。")
+            + ("主カテゴリを付与済み。" if categories else "分野分類は未実施。")
             + "OCR結果には軽微な誤字が残る場合があります。"
         ),
         "questions": questions,
@@ -499,6 +501,14 @@ def load_explanations(data_dir: Path, exam_id: str) -> dict[int, dict]:
         return {}
     payload = json.loads(path.read_text(encoding="utf-8"))
     return {int(question_no): explanation for question_no, explanation in payload.items()}
+
+
+def load_categories(data_dir: Path, exam_id: str) -> dict[int, str]:
+    path = data_dir / "categories" / f"{exam_id}.json"
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return {int(question_no): category for question_no, category in payload.items()}
 
 
 def write_json(path: Path, payload) -> None:
@@ -547,6 +557,7 @@ def main() -> None:
     answers = parse_answers(args.answers)
     page_text = ocr_pages(image_paths, args.ocr_script) if args.ocr else None
     explanations = load_explanations(args.data_dir, args.exam_id)
+    categories = load_categories(args.data_dir, args.exam_id)
     title = args.title or f"{args.year or ''}年 {args.season} ITサービスマネージャ 午前II".strip()
     exam = build_exam(
         answers,
@@ -558,6 +569,7 @@ def main() -> None:
         era=args.era,
         season=args.season,
         explanations=explanations,
+        categories=categories,
     )
     exam_path = args.data_dir / "exams" / f"{args.exam_id}.json"
     write_json(exam_path, exam)

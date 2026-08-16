@@ -25,7 +25,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "エ",
-      "category": null,
+      "category": "サービスマネジメントシステム",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -56,7 +56,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "エ",
-      "category": null,
+      "category": "ITサービス継続性管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -87,7 +87,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "供給者・事業関係管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -118,7 +118,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "可用性管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -149,7 +149,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ア",
-      "category": null,
+      "category": "監査・ガバナンス・法務",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -180,7 +180,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "可用性管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -211,7 +211,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "その他",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -242,7 +242,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "サービスデスク",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -273,7 +273,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "運用・ファシリティ管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -304,7 +304,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "ITサービス継続性管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -335,7 +335,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "運用・ファシリティ管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -366,7 +366,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "エ",
-      "category": null,
+      "category": "運用・ファシリティ管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -397,7 +397,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "エ",
-      "category": null,
+      "category": "運用・ファシリティ管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -428,7 +428,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ア",
-      "category": null,
+      "category": "監査・ガバナンス・法務",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -459,7 +459,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "情報セキュリティ管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -490,7 +490,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "情報セキュリティ管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -521,7 +521,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "情報セキュリティ管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -552,7 +552,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "プロジェクト管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -588,7 +588,7 @@
       ],
       "hasFigureHint": true,
       "answer": "ア",
-      "category": null,
+      "category": "プロジェクト管理",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -619,7 +619,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "その他",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -650,7 +650,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "エ",
-      "category": null,
+      "category": "その他",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -681,7 +681,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "その他",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -712,7 +712,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "イ",
-      "category": null,
+      "category": "その他",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -743,7 +743,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "その他",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,
@@ -774,7 +774,7 @@
       "figures": [],
       "hasFigureHint": false,
       "answer": "ウ",
-      "category": null,
+      "category": "その他",
       "explanation": {
         "status": "reviewed",
         "reviewed": true,

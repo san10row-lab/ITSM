@@ -125,7 +125,7 @@ select {
 
 .segmented {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 4px;
   margin: 16px 0;
   padding: 4px;
@@ -215,6 +215,20 @@ select {
   font-size: 0.95rem;
 }
 
+.category-hint {
+  margin: -4px 0 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.category-table-wrap { overflow-x: auto; }
+.category-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+.category-table th, .category-table td { padding: 7px 4px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+.category-table th:first-child { text-align: left; white-space: normal; }
+.category-table thead th { color: var(--muted); font-weight: 700; }
+.no-category-stats { color: var(--muted); text-align: center !important; }
+
 .progress-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -287,6 +301,22 @@ select {
 .question-bar h2 {
   font-size: clamp(1.2rem, 2vw, 1.55rem);
 }
+
+.category-label {
+  display: inline-block;
+  margin: 2px 0 6px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  padding: 4px 9px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.answer-row { align-items: center; justify-content: flex-end; gap: 12px; }
+.answer-row .primary-button { width: min(100%, 260px); }
+.uncertain-control { display: flex; align-items: center; gap: 7px; min-height: 42px; padding: 0 12px; border: 1px solid #e0c36c; border-radius: 8px; background: #fff8df; color: #735a12; cursor: pointer; font-weight: 800; white-space: nowrap; }
+.uncertain-control input { width: 18px; height: 18px; accent-color: #9f7410; }
 
 .position-label {
   min-width: 72px;
@@ -579,7 +609,7 @@ select {
   position: sticky;
   bottom: -22px;
   z-index: 2;
-  display: grid;
+  display: flex;
   padding: 12px 0 0;
   background: linear-gradient(rgba(251, 252, 250, 0), #fbfcfa 24px, #fbfcfa);
 }
@@ -613,6 +643,14 @@ select {
 }
 
 @media (max-width: 520px) {
+  .answer-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .answer-row .primary-button {
+    width: 100%;
+  }
   .question-bar {
     flex-direction: column;
   }

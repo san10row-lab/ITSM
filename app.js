@@ -1,5 +1,6 @@
 const state = {
   exams: [],
+  examCache: {},
   exam: null,
   mode: "all",
   queue: [],
@@ -21,12 +22,14 @@ const els = {
   quizCard: document.querySelector("#quizCard"),
   sourceLabel: document.querySelector("#sourceLabel"),
   questionTitle: document.querySelector("#questionTitle"),
+  categoryLabel: document.querySelector("#categoryLabel"),
   questionPosition: document.querySelector("#questionPosition"),
   ocrFlagButton: document.querySelector("#ocrFlagButton"),
   questionText: document.querySelector("#questionText"),
   figureList: document.querySelector("#figureList"),
   choiceList: document.querySelector("#choiceList"),
   submitAnswerButton: document.querySelector("#submitAnswerButton"),
+  uncertainInput: document.querySelector("#uncertainInput"),
   feedback: document.querySelector("#feedback"),
   explanationPanel: document.querySelector("#explanationPanel"),
   prevButton: document.querySelector("#prevButton"),
@@ -35,10 +38,11 @@ const els = {
   totalAnswered: document.querySelector("#totalAnswered"),
   accuracy: document.querySelector("#accuracy"),
   wrongCount: document.querySelector("#wrongCount"),
+  categoryStatsBody: document.querySelector("#categoryStatsBody"),
 };
 
 const storageKey = "itsm-am2-progress-v1";
-const historyExportVersion = 1;
+const historyExportVersion = 2;
 
 function readProgress() {
   try {
@@ -53,7 +57,7 @@ function writeProgress(progress) {
 }
 
 function emptyProgress() {
-  return { answers: {}, lastWrong: [], flags: {} };
+  return { answers: {}, lastWrong: [], flags: {}, everWrong: {} };
 }
 
 function normalizeProgress(progress) {
@@ -61,7 +65,12 @@ function normalizeProgress(progress) {
   const answers = progress.answers && typeof progress.answers === "object" ? progress.answers : {};
   const lastWrong = Array.isArray(progress.lastWrong) ? progress.lastWrong.filter(Boolean) : [];
   const flags = progress.flags && typeof progress.flags === "object" ? progress.flags : {};
-  return { answers, lastWrong, flags };
+  const everWrong = progress.everWrong && typeof progress.everWrong === "object" ? progress.everWrong : {};
+  Object.entries(answers).forEach(([id, record]) => {
+    if (record && record.correct === false) everWrong[id] = true;
+  });
+  lastWrong.forEach((id) => { everWrong[id] = true; });
+  return { answers, lastWrong, flags, everWrong };
 }
 
 function setHistoryStatus(message, isError = false) {
@@ -115,6 +124,7 @@ function mergeProgress(current, imported) {
   });
 
   merged.lastWrong = [...new Set([...(merged.lastWrong || []), ...(importedProgress.lastWrong || [])])];
+  merged.everWrong = { ...merged.everWrong, ...importedProgress.everWrong };
   Object.entries(importedProgress.flags).forEach(([id, flag]) => {
     if (!flag || typeof flag !== "object") return;
     const existing = merged.flags[id];
@@ -169,9 +179,20 @@ async function loadIndex() {
   els.examSelect.innerHTML = state.exams
     .map((exam) => `<option value="${exam.id}">${exam.title}</option>`)
     .join("");
+  const loaded = await Promise.all(state.exams.map(async (exam) => {
+    const res = await fetch(exam.path, { cache: "no-store" });
+    if (!res.ok) throw new Error(`試験データを読み込めませんでした: ${exam.id}`);
+    return [exam.id, await res.json()];
+  }));
+  state.examCache = Object.fromEntries(loaded);
+  renderStats();
 }
 
 async function loadExam(id) {
+  if (state.examCache[id]) {
+    state.exam = state.examCache[id];
+    return;
+  }
   const meta = state.exams.find((exam) => exam.id === id);
   const res = await fetch(meta.path, { cache: "no-store" });
   if (!res.ok) throw new Error("試験データを読み込めませんでした。");
@@ -184,6 +205,10 @@ function buildQueue() {
   if (state.mode === "wrong") {
     const wrongSet = new Set(progress.lastWrong || []);
     state.queue = questions.filter((question) => wrongSet.has(question.id));
+  } else if (state.mode === "weak") {
+    state.queue = questions.filter((question) => (
+      progress.everWrong?.[question.id] || progress.answers?.[question.id]?.uncertain === true
+    ));
   } else if (state.mode === "random") {
     state.queue = shuffle(questions);
   } else {
@@ -205,6 +230,39 @@ function renderStats() {
   els.totalAnswered.textContent = String(total);
   els.accuracy.textContent = total ? `${Math.round((correct / total) * 100)}%` : "-";
   els.wrongCount.textContent = String((progress.lastWrong || []).length);
+  renderCategoryStats(progress);
+}
+
+function allQuestions() {
+  return Object.values(state.examCache).flatMap((exam) => exam.questions || []);
+}
+
+function renderCategoryStats(progress) {
+  const categories = new Map();
+  allQuestions().forEach((question) => {
+    const record = progress.answers?.[question.id];
+    if (!record) return;
+    const category = question.category || "その他";
+    const stats = categories.get(category) || { answered: 0, correct: 0, uncertain: 0 };
+    stats.answered += 1;
+    if (record.correct === true) stats.correct += 1;
+    if (record.uncertain === true) stats.uncertain += 1;
+    categories.set(category, stats);
+  });
+  if (!categories.size) {
+    els.categoryStatsBody.innerHTML = '<tr><td colspan="5" class="no-category-stats">回答後に表示されます</td></tr>';
+    return;
+  }
+  els.categoryStatsBody.innerHTML = [...categories.entries()]
+    .sort(([, a], [, b]) => (a.correct / a.answered) - (b.correct / b.answered))
+    .map(([category, stats]) => `
+      <tr>
+        <th scope="row">${escapeHtml(category)}</th>
+        <td>${stats.answered}</td>
+        <td>${stats.correct}</td>
+        <td>${Math.round((stats.correct / stats.answered) * 100)}%</td>
+        <td>${stats.uncertain}</td>
+      </tr>`).join("");
 }
 
 function renderProgress() {
@@ -230,7 +288,9 @@ function renderQuestion() {
     els.emptyState.classList.remove("hidden");
     els.quizCard.classList.add("hidden");
     els.emptyState.querySelector("h2").textContent = "対象の問題がありません";
-    els.emptyState.querySelector("p").textContent = "全問モードで一度回答すると、直前ミスを試せます。";
+    els.emptyState.querySelector("p").textContent = state.mode === "weak"
+      ? "不正解だった問題、または直近の回答で「迷った」と記録した問題が対象です。"
+      : "全問モードで一度回答すると、直前ミスを試せます。";
     renderStats();
     renderProgress();
     return;
@@ -239,6 +299,7 @@ function renderQuestion() {
   els.emptyState.classList.add("hidden");
   els.quizCard.classList.remove("hidden");
   els.sourceLabel.textContent = question.source;
+  els.categoryLabel.textContent = question.category || "その他";
   els.questionTitle.textContent = `問${question.questionNo}`;
   els.questionPosition.textContent = `${state.index + 1} / ${state.queue.length}`;
   renderOcrFlagButton(question);
@@ -246,6 +307,8 @@ function renderQuestion() {
   els.figureList.innerHTML = renderFigures(question.figures || []);
   els.choiceList.innerHTML = renderChoices(question.choices || {});
   state.selectedAnswer = null;
+  els.uncertainInput.checked = false;
+  els.uncertainInput.disabled = false;
   els.submitAnswerButton.disabled = true;
   els.submitAnswerButton.textContent = "回答する";
   els.feedback.className = "feedback";
@@ -323,14 +386,17 @@ function answerQuestion(answer) {
   if (!question || !answer || answerButtons.some((button) => button.disabled)) return;
 
   const correct = answer === question.answer;
+  const uncertain = els.uncertainInput.checked;
   const progress = readProgress();
   progress.answers ||= {};
   progress.answers[question.id] = {
     answer,
     correct,
+    uncertain,
     answeredAt: new Date().toISOString(),
   };
   state.sessionResults[question.id] = correct;
+  if (!correct) progress.everWrong[question.id] = true;
   progress.lastWrong = Object.entries(state.sessionResults)
     .filter(([, isCorrect]) => !isCorrect)
     .map(([id]) => id);
@@ -344,11 +410,12 @@ function answerQuestion(answer) {
     if (value === answer) button.classList.add("selected");
   });
   els.submitAnswerButton.disabled = true;
+  els.uncertainInput.disabled = true;
   els.submitAnswerButton.textContent = "回答済み";
   els.feedback.className = `feedback ${correct ? "correct" : "wrong"}`;
   els.feedback.textContent = correct
-    ? `正解です。答えは ${question.answer} です。`
-    : `不正解です。正解は ${question.answer} です。`;
+    ? `正解です。答えは ${question.answer} です。${uncertain ? "「迷った」と記録しました。" : ""}`
+    : `不正解です。正解は ${question.answer} です。${uncertain ? "「迷った」と記録しました。" : ""}`;
   renderExplanation(question, answer);
   renderStats();
   renderProgress();
@@ -470,7 +537,7 @@ function bindEvents() {
       els.quizCard.classList.add("hidden");
       els.emptyState.classList.remove("hidden");
       els.emptyState.querySelector("h2").textContent = "完了しました";
-      els.emptyState.querySelector("p").textContent = "直前ミスモードで復習できます。";
+      els.emptyState.querySelector("p").textContent = "直前ミス・苦手モードで復習できます。";
     }
   });
   els.progressList.addEventListener("click", (event) => {

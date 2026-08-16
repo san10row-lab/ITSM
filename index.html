@@ -30,6 +30,7 @@
           <button class="mode-button active" data-mode="all" type="button">全問</button>
           <button class="mode-button" data-mode="random" type="button">ランダム</button>
           <button class="mode-button" data-mode="wrong" type="button">直前ミス</button>
+          <button class="mode-button" data-mode="weak" type="button">苦手</button>
         </div>
 
         <button id="startButton" class="primary-button" type="button">開始</button>
@@ -45,6 +46,17 @@
           <h2>進行</h2>
           <div id="progressList" class="progress-list"></div>
         </section>
+
+        <section class="mini-section category-section" aria-labelledby="categoryStatsTitle">
+          <h2 id="categoryStatsTitle">カテゴリ別の成績</h2>
+          <p class="category-hint">回答済みの問題をカテゴリごとに集計します。</p>
+          <div class="category-table-wrap">
+            <table class="category-table">
+              <thead><tr><th>カテゴリ</th><th>回答</th><th>正解</th><th>正答率</th><th>迷い</th></tr></thead>
+              <tbody id="categoryStatsBody"></tbody>
+            </table>
+          </div>
+        </section>
       </aside>
 
       <section class="workspace">
@@ -57,6 +69,7 @@
           <div class="question-bar">
             <div>
               <p id="sourceLabel" class="source-label"></p>
+              <p id="categoryLabel" class="category-label"></p>
               <h2 id="questionTitle"></h2>
             </div>
             <div class="question-actions">
@@ -70,6 +83,10 @@
             <div id="figureList" class="figure-list"></div>
             <div id="choiceList" class="choice-list" role="group" aria-label="回答を選択"></div>
             <div class="answer-row">
+              <label class="uncertain-control">
+                <input id="uncertainInput" type="checkbox">
+                <span>迷った</span>
+              </label>
               <button id="submitAnswerButton" class="primary-button" type="button" disabled>回答する</button>
             </div>
           </div>
@@ -85,6 +102,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=5"></script>
+    <script src="app.js?v=6"></script>
   </body>
 </html>
