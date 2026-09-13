@@ -39,7 +39,9 @@
         },
         "note": "力量、資源、知識、認識の要求を区別してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問1"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問1",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-002",
@@ -70,7 +72,9 @@
         },
         "note": "代表的な改善・戦略分析手法を比較してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問2"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問2",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-003",
@@ -101,7 +105,9 @@
         },
         "note": "三指標を数値で再計算してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問3"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問3",
+      "questionType": "calculation",
+      "calculationPattern": "可用性・信頼性指標"
     },
     {
       "id": "2022-spring-sm-am2-004",
@@ -132,7 +138,9 @@
         },
         "note": "OCRで欠落していたイを元PDFで補正し、ITILのサービス状態区分をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問4"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問4",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-005",
@@ -163,7 +171,9 @@
         },
         "note": "設問中のOCR「RIO」はRTOとして解釈し、三指標を区別してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問5"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問5",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-006",
@@ -194,7 +204,9 @@
         },
         "note": "事業関係管理、サービスレベル管理、供給者管理に分類してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問6"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問6",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-007",
@@ -225,7 +237,9 @@
         },
         "note": "インシデントモデルと記録、KPI、ワークアラウンドを区別してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問7"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問7",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-008",
@@ -256,7 +270,9 @@
         },
         "note": "適合性監査とパフォーマンス評価、経営レビューを区別してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問8"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問8",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-009",
@@ -287,7 +303,9 @@
         },
         "note": "構成管理におけるベースラインの用途をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問9"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問9",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-010",
@@ -318,7 +336,9 @@
         },
         "note": "TCOの期間と費用範囲をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問10"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問10",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-011",
@@ -349,7 +369,9 @@
         },
         "note": "予防的しきい値と複数指標の継続監視をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問11"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問11",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-012",
@@ -380,7 +402,9 @@
         },
         "note": "4製品の主要用途を比較してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問12"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問12",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-013",
@@ -411,7 +435,9 @@
         },
         "note": "必要容量Nと保守停止時の残存台数でレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問13"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問13",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-014",
@@ -442,7 +468,9 @@
         },
         "note": "入力統制、処理統制、インタフェース統制を区別してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問14"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問14",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-015",
@@ -473,7 +501,9 @@
         },
         "note": "各組織の設置主体と役割をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問15"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問15",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-016",
@@ -504,7 +534,9 @@
         },
         "note": "OCRで欠落したウ・エを元PDFで補正し、制度の対象と審査主体をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問16"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問16",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-017",
@@ -535,7 +567,9 @@
         },
         "note": "対象、目的、リスクベースの考え方をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問17"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問17",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-018",
@@ -566,7 +600,9 @@
         },
         "note": "主要なコスト見積り手法を比較してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問18"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問18",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-019",
@@ -597,7 +633,9 @@
         },
         "note": "受容、軽減、転嫁、回避に分類してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問19"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問19",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-020",
@@ -628,7 +666,9 @@
         },
         "note": "PMBOK第6版の品質プロセス間の入出力をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問20"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問20",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-021",
@@ -659,7 +699,9 @@
         },
         "note": "キャッシュとインタリーブの違いをレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問21"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問21",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-022",
@@ -695,7 +737,9 @@
         },
         "note": "時間の秒換算と指数信頼度を再計算してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問22"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問22",
+      "questionType": "calculation",
+      "calculationPattern": "可用性・信頼性指標"
     },
     {
       "id": "2022-spring-sm-am2-023",
@@ -731,7 +775,9 @@
         },
         "note": "添付図の2相コミットのメッセージ順をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問23"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問23",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-024",
@@ -767,7 +813,9 @@
         },
         "note": "添付図のプロキシ終端点とルータの役割をレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問24"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問24",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2022-spring-sm-am2-025",
@@ -798,7 +846,9 @@
         },
         "note": "ジャニスの集団思考の各兆候を比較してレビュー済み。"
       },
-      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問25"
+      "source": "令和4年度 春期 ITサービスマネージャ試験 午前II 問25",
+      "questionType": "knowledge",
+      "calculationPattern": null
     }
   ]
 }

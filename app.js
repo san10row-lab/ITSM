@@ -3,6 +3,8 @@ const state = {
   examCache: {},
   exam: null,
   mode: "all",
+  questionType: "all",
+  calculationPattern: "all",
   queue: [],
   index: 0,
   sessionResults: {},
@@ -11,6 +13,9 @@ const state = {
 
 const els = {
   examSelect: document.querySelector("#examSelect"),
+  questionTypeSelect: document.querySelector("#questionTypeSelect"),
+  calculationPatternSelect: document.querySelector("#calculationPatternSelect"),
+  filterSummary: document.querySelector("#filterSummary"),
   startButton: document.querySelector("#startButton"),
   resetButton: document.querySelector("#resetButton"),
   exportHistoryButton: document.querySelector("#exportHistoryButton"),
@@ -23,6 +28,7 @@ const els = {
   sourceLabel: document.querySelector("#sourceLabel"),
   questionTitle: document.querySelector("#questionTitle"),
   categoryLabel: document.querySelector("#categoryLabel"),
+  calculationLabel: document.querySelector("#calculationLabel"),
   questionPosition: document.querySelector("#questionPosition"),
   ocrFlagButton: document.querySelector("#ocrFlagButton"),
   questionText: document.querySelector("#questionText"),
@@ -178,17 +184,28 @@ async function loadIndex() {
   state.exams = await res.json();
   els.examSelect.innerHTML = state.exams
     .map((exam) => `<option value="${exam.id}">${exam.title}</option>`)
-    .join("");
+    .join("") + '<option value="all-exams">全年度（10回分）</option>';
   const loaded = await Promise.all(state.exams.map(async (exam) => {
     const res = await fetch(exam.path, { cache: "no-store" });
     if (!res.ok) throw new Error(`試験データを読み込めませんでした: ${exam.id}`);
     return [exam.id, await res.json()];
   }));
   state.examCache = Object.fromEntries(loaded);
+  updateCalculationPatternOptions();
   renderStats();
 }
 
 async function loadExam(id) {
+  if (id === "all-exams") {
+    state.exam = {
+      id,
+      title: "全年度",
+      questions: Object.values(state.examCache).flatMap((exam) => (
+        (exam.questions || []).map((question) => ({ ...question, examYear: exam.year }))
+      )),
+    };
+    return;
+  }
   if (state.examCache[id]) {
     state.exam = state.examCache[id];
     return;
@@ -200,7 +217,11 @@ async function loadExam(id) {
 }
 
 function buildQueue() {
-  const questions = state.exam.questions;
+  const questions = state.exam.questions.filter((question) => {
+    if (state.questionType !== "all" && question.questionType !== state.questionType) return false;
+    if (state.calculationPattern !== "all" && question.calculationPattern !== state.calculationPattern) return false;
+    return true;
+  });
   const progress = readProgress();
   if (state.mode === "wrong") {
     const wrongSet = new Set(progress.lastWrong || []);
@@ -235,6 +256,41 @@ function renderStats() {
 
 function allQuestions() {
   return Object.values(state.examCache).flatMap((exam) => exam.questions || []);
+}
+
+function questionsForSelectedExam() {
+  if (els.examSelect.value === "all-exams") return allQuestions();
+  return state.examCache[els.examSelect.value]?.questions || [];
+}
+
+function matchingFilterCount() {
+  return questionsForSelectedExam().filter((question) => {
+    if (state.questionType !== "all" && question.questionType !== state.questionType) return false;
+    return state.calculationPattern === "all" || question.calculationPattern === state.calculationPattern;
+  }).length;
+}
+
+function updateCalculationPatternOptions() {
+  const previous = state.calculationPattern;
+  const patterns = [...new Set(
+    questionsForSelectedExam()
+      .filter((question) => state.questionType !== "all" && question.questionType === state.questionType)
+      .map((question) => question.calculationPattern)
+      .filter(Boolean)
+  )].sort((a, b) => a.localeCompare(b, "ja"));
+  els.calculationPatternSelect.disabled = state.questionType === "all";
+  els.calculationPatternSelect.innerHTML = '<option value="all">全パターン</option>'
+    + patterns.map((pattern) => `<option value="${escapeHtml(pattern)}">${escapeHtml(pattern)}</option>`).join("");
+  state.calculationPattern = patterns.includes(previous) ? previous : "all";
+  els.calculationPatternSelect.value = state.calculationPattern;
+  updateFilterSummary();
+}
+
+function updateFilterSummary() {
+  const labels = { all: "すべての問題", calculation: "計算問題", formula: "公式・指標確認" };
+  const scope = els.examSelect.value === "all-exams" ? "全年度" : "選択年度";
+  const pattern = state.calculationPattern === "all" ? "" : `・${state.calculationPattern}`;
+  els.filterSummary.textContent = `${scope}の${labels[state.questionType]}${pattern}：${matchingFilterCount()}問`;
 }
 
 function renderCategoryStats(progress) {
@@ -277,7 +333,9 @@ function renderProgress() {
       if (record && !record.correct) classes.push("wrong");
       if (flag) classes.push("flagged");
       const flagMark = flag ? `<span class="progress-flag-mark" aria-label="OCR要確認">!</span>` : "";
-      return `<button type="button" class="${classes.join(" ")}" data-index="${idx}">${question.questionNo}${flagMark}</button>`;
+      const label = question.examYear ? `${String(question.examYear).slice(-2)}-${question.questionNo}` : question.questionNo;
+      const title = question.examYear ? `${question.examYear}年 問${question.questionNo}` : `問${question.questionNo}`;
+      return `<button type="button" class="${classes.join(" ")}" data-index="${idx}" title="${title}">${label}${flagMark}</button>`;
     })
     .join("");
 }
@@ -289,8 +347,10 @@ function renderQuestion() {
     els.quizCard.classList.add("hidden");
     els.emptyState.querySelector("h2").textContent = "対象の問題がありません";
     els.emptyState.querySelector("p").textContent = state.mode === "weak"
-      ? "不正解だった問題、または直近の回答で「迷った」と記録した問題が対象です。"
-      : "全問モードで一度回答すると、直前ミスを試せます。";
+      ? "現在の条件に一致する苦手問題はありません。"
+      : state.mode === "wrong"
+        ? "現在の条件に一致する直前ミスはありません。"
+        : "試験回・問題種別・計算パターンの条件を変更してください。";
     renderStats();
     renderProgress();
     return;
@@ -300,7 +360,15 @@ function renderQuestion() {
   els.quizCard.classList.remove("hidden");
   els.sourceLabel.textContent = question.source;
   els.categoryLabel.textContent = question.category || "その他";
-  els.questionTitle.textContent = `問${question.questionNo}`;
+  if (question.questionType === "calculation" || question.questionType === "formula") {
+    const typeLabel = question.questionType === "calculation" ? "計算問題" : "公式・指標確認";
+    els.calculationLabel.textContent = `${typeLabel}・${question.calculationPattern}`;
+    els.calculationLabel.classList.remove("hidden");
+  } else {
+    els.calculationLabel.textContent = "";
+    els.calculationLabel.classList.add("hidden");
+  }
+  els.questionTitle.textContent = question.examYear ? `${question.examYear}年 問${question.questionNo}` : `問${question.questionNo}`;
   els.questionPosition.textContent = `${state.index + 1} / ${state.queue.length}`;
   renderOcrFlagButton(question);
   els.questionText.textContent = question.question || question.rawText || "問題文を読み込めませんでした。";
@@ -498,6 +566,17 @@ function bindEvents() {
       state.mode = button.dataset.mode;
       els.modeButtons.forEach((item) => item.classList.toggle("active", item === button));
     });
+  });
+
+  els.examSelect.addEventListener("change", updateCalculationPatternOptions);
+  els.questionTypeSelect.addEventListener("change", () => {
+    state.questionType = els.questionTypeSelect.value;
+    state.calculationPattern = "all";
+    updateCalculationPatternOptions();
+  });
+  els.calculationPatternSelect.addEventListener("change", () => {
+    state.calculationPattern = els.calculationPatternSelect.value;
+    updateFilterSummary();
   });
 
   els.startButton.addEventListener("click", start);

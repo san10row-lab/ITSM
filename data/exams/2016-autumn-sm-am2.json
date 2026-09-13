@@ -39,7 +39,9 @@
         },
         "note": "SMARTの五要素をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問1"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問1",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-002",
@@ -70,7 +72,9 @@
         },
         "note": "2021年問4と照合してレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問2"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問2",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-003",
@@ -101,7 +105,9 @@
         },
         "note": "2021年問5と照合してレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問3"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問3",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-004",
@@ -132,7 +138,9 @@
         },
         "note": "内部監査の独立性、基準、報告、頻度をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問4"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問4",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-005",
@@ -163,7 +171,9 @@
         },
         "note": "ITIL 7ステップ改善プロセスの順序をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問5"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問5",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-006",
@@ -194,7 +204,9 @@
         },
         "note": "インシデント管理、問題管理、変更管理のインタフェースをレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問6"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問6",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-007",
@@ -225,7 +237,9 @@
         },
         "note": "RPOとRTOを比較してレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問7"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問7",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-008",
@@ -256,7 +270,9 @@
         },
         "note": "変更管理とリリース及び展開管理の責任をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問8"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問8",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-009",
@@ -292,7 +308,9 @@
         },
         "note": "添付サプライチェーン図と供給者管理の責任境界をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問9"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問9",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-010",
@@ -323,7 +341,9 @@
         },
         "note": "容量・能力予測のモデル化手順をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問10"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問10",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-011",
@@ -354,7 +374,9 @@
         },
         "note": "2021年問10と照合してレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問11"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問11",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-012",
@@ -385,7 +407,9 @@
         },
         "note": "MTRS、MTBF、MTBSIの算式をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問12"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問12",
+      "questionType": "calculation",
+      "calculationPattern": "可用性・信頼性指標"
     },
     {
       "id": "2016-autumn-sm-am2-013",
@@ -416,7 +440,9 @@
         },
         "note": "UNDOとREDOの使用情報・復旧方向をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問13"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問13",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-014",
@@ -447,7 +473,9 @@
         },
         "note": "コールドアイルと周辺設備をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問14"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問14",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-015",
@@ -478,7 +506,9 @@
         },
         "note": "経営者、取締役会、監査役、内部監査人の責任をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問15"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問15",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-016",
@@ -509,7 +539,9 @@
         },
         "note": "添付表からCPIとSPIを確認しIPA正答表と照合してレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問16"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問16",
+      "questionType": "calculation",
+      "calculationPattern": "EVM・開発見積り"
     },
     {
       "id": "2016-autumn-sm-am2-017",
@@ -540,7 +572,9 @@
         },
         "note": "EMVの期待値定義をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問17"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問17",
+      "questionType": "formula",
+      "calculationPattern": "期待金額価値"
     },
     {
       "id": "2016-autumn-sm-am2-018",
@@ -571,7 +605,9 @@
         },
         "note": "契約タイプごとのコストリスク負担をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問18"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問18",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-019",
@@ -602,7 +638,9 @@
         },
         "note": "RAIDレベルのデータ・冗長情報配置をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問19"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問19",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-020",
@@ -633,7 +671,9 @@
         },
         "note": "単位と逆数関係からレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問20"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問20",
+      "questionType": "formula",
+      "calculationPattern": "性能指標"
     },
     {
       "id": "2016-autumn-sm-am2-021",
@@ -664,7 +704,9 @@
         },
         "note": "WALとコミット情報の永続化をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問21"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問21",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-022",
@@ -695,7 +737,9 @@
         },
         "note": "リンクアグリゲーションと類似略語をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問22"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問22",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-023",
@@ -726,7 +770,9 @@
         },
         "note": "犯罪・不正に関する四理論を比較してレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問23"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問23",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-024",
@@ -757,7 +803,9 @@
         },
         "note": "WPA2とWEP/WPAの暗号方式をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問24"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問24",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2016-autumn-sm-am2-025",
@@ -788,7 +836,9 @@
         },
         "note": "各法律の規制対象をレビュー済み。"
       },
-      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問25"
+      "source": "平成28年度 秋期 ITサービスマネージャ試験 午前II 問25",
+      "questionType": "knowledge",
+      "calculationPattern": null
     }
   ]
 }

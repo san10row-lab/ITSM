@@ -26,6 +26,24 @@
           <select id="examSelect"></select>
         </label>
 
+        <div class="filter-fields">
+          <label class="field">
+            <span>問題種別</span>
+            <select id="questionTypeSelect">
+              <option value="all">すべて</option>
+              <option value="calculation">計算問題</option>
+              <option value="formula">公式・指標確認</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>計算パターン</span>
+            <select id="calculationPatternSelect" disabled>
+              <option value="all">全パターン</option>
+            </select>
+          </label>
+        </div>
+        <p id="filterSummary" class="filter-summary" aria-live="polite"></p>
+
         <div class="segmented" role="group" aria-label="出題モード">
           <button class="mode-button active" data-mode="all" type="button">全問</button>
           <button class="mode-button" data-mode="random" type="button">ランダム</button>
@@ -69,7 +87,10 @@
           <div class="question-bar">
             <div>
               <p id="sourceLabel" class="source-label"></p>
-              <p id="categoryLabel" class="category-label"></p>
+              <div class="question-badges">
+                <p id="categoryLabel" class="category-label"></p>
+                <p id="calculationLabel" class="calculation-label hidden"></p>
+              </div>
               <h2 id="questionTitle"></h2>
             </div>
             <div class="question-actions">
@@ -102,6 +123,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=6"></script>
+    <script src="app.js?v=7"></script>
   </body>
 </html>

@@ -39,7 +39,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問1"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問1",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-002",
@@ -70,7 +72,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問2"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問2",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-003",
@@ -101,7 +105,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問3"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問3",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-004",
@@ -132,7 +138,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問4"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問4",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-005",
@@ -163,7 +171,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問5"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問5",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-006",
@@ -199,7 +209,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問6"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問6",
+      "questionType": "calculation",
+      "calculationPattern": "日程・要員計画"
     },
     {
       "id": "2025-spring-sm-am2-007",
@@ -230,7 +242,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問7"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問7",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-008",
@@ -261,7 +275,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問8"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問8",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-009",
@@ -292,7 +308,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問9"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問9",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-010",
@@ -323,7 +341,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問10"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問10",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-011",
@@ -354,7 +374,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問11"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問11",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-012",
@@ -385,7 +407,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問12"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問12",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-013",
@@ -416,7 +440,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問13"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問13",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-014",
@@ -447,7 +473,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問14"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問14",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-015",
@@ -478,7 +506,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問15"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問15",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-016",
@@ -509,7 +539,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問16"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問16",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-017",
@@ -540,7 +572,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問17"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問17",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-018",
@@ -571,7 +605,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問18"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問18",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-019",
@@ -607,7 +643,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問19"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問19",
+      "questionType": "calculation",
+      "calculationPattern": "日程・要員計画"
     },
     {
       "id": "2025-spring-sm-am2-020",
@@ -638,7 +676,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問20"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問20",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-021",
@@ -669,7 +709,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問21"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問21",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-022",
@@ -700,7 +742,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問22"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問22",
+      "questionType": "calculation",
+      "calculationPattern": "可用性・信頼性指標"
     },
     {
       "id": "2025-spring-sm-am2-023",
@@ -731,7 +775,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問23"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問23",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-024",
@@ -762,7 +808,9 @@
         },
         "note": "AIで作成したドラフト解説です。OCR誤字や設問文の読み取りを含めて、必要に応じて校正してください。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問24"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問24",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2025-spring-sm-am2-025",
@@ -793,7 +841,9 @@
         },
         "note": "この問題は選択肢イのOCR抽出が不完全です。PDF原本を見て本文を補正する必要があります。"
       },
-      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問25"
+      "source": "令和7年度 春期 ITサービスマネージャ試験 午前II 問25",
+      "questionType": "knowledge",
+      "calculationPattern": null
     }
   ]
 }

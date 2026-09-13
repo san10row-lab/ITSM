@@ -29,6 +29,20 @@ select {
   font: inherit;
 }
 
+.filter-fields {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.filter-summary {
+  min-height: 1.4em;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
 .app-header {
   display: flex;
   align-items: center;
@@ -311,6 +325,32 @@ select {
   padding: 4px 9px;
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+.question-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 2px 0 6px;
+}
+
+.question-badges .category-label {
+  margin: 0;
+}
+
+.calculation-label {
+  display: inline-block;
+  margin: 0;
+  border-radius: 999px;
+  background: #fff1cf;
+  color: #73530b;
+  padding: 4px 9px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.calculation-label.hidden {
+  display: none;
 }
 
 .answer-row { align-items: center; justify-content: flex-end; gap: 12px; }

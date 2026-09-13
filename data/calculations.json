@@ -1,0 +1,57 @@
+{
+  "2015-autumn-sm-am2": {
+    "4": {"questionType": "calculation", "calculationPattern": "重み付け評価"},
+    "7": {"questionType": "calculation", "calculationPattern": "TCO・費用集計"},
+    "9": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "17": {"questionType": "calculation", "calculationPattern": "EVM・開発見積り"}
+  },
+  "2016-autumn-sm-am2": {
+    "12": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "16": {"questionType": "calculation", "calculationPattern": "EVM・開発見積り"},
+    "17": {"questionType": "formula", "calculationPattern": "期待金額価値"},
+    "20": {"questionType": "formula", "calculationPattern": "性能指標"}
+  },
+  "2017-autumn-sm-am2": {
+    "2": {"questionType": "calculation", "calculationPattern": "重み付け評価"},
+    "9": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "13": {"questionType": "calculation", "calculationPattern": "日程・要員計画"},
+    "17": {"questionType": "calculation", "calculationPattern": "期待金額価値"}
+  },
+  "2018-autumn-sm-am2": {
+    "17": {"questionType": "formula", "calculationPattern": "EVM・開発見積り"}
+  },
+  "2019-autumn-sm-am2": {
+    "5": {"questionType": "calculation", "calculationPattern": "重み付け評価"},
+    "14": {"questionType": "calculation", "calculationPattern": "日程・要員計画"},
+    "18": {"questionType": "calculation", "calculationPattern": "EVM・開発見積り"},
+    "20": {"questionType": "calculation", "calculationPattern": "キャパシティ・必要台数"}
+  },
+  "2021-spring-sm-am2": {
+    "2": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "6": {"questionType": "calculation", "calculationPattern": "日程・要員計画"},
+    "13": {"questionType": "formula", "calculationPattern": "PUE"},
+    "22": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"}
+  },
+  "2022-spring-sm-am2": {
+    "3": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "22": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"}
+  },
+  "2023-spring-sm-am2": {
+    "6": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "7": {"questionType": "calculation", "calculationPattern": "日程・要員計画"},
+    "9": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "12": {"questionType": "calculation", "calculationPattern": "日程・要員計画"},
+    "19": {"questionType": "calculation", "calculationPattern": "開発工数比較"},
+    "24": {"questionType": "calculation", "calculationPattern": "ネットワーク性能"}
+  },
+  "2024-spring-sm-am2": {
+    "6": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"},
+    "12": {"questionType": "formula", "calculationPattern": "PUE"},
+    "19": {"questionType": "calculation", "calculationPattern": "日程・要員計画"}
+  },
+  "2025-spring-sm-am2": {
+    "6": {"questionType": "calculation", "calculationPattern": "日程・要員計画"},
+    "19": {"questionType": "calculation", "calculationPattern": "日程・要員計画"},
+    "22": {"questionType": "calculation", "calculationPattern": "可用性・信頼性指標"}
+  }
+}

@@ -39,7 +39,9 @@
         },
         "note": "2016年問1と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問1"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問1",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-002",
@@ -70,7 +72,9 @@
         },
         "note": "2021年問5と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問2"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問2",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-003",
@@ -101,7 +105,9 @@
         },
         "note": "JIS Q 20000-1:2012の経営者責任をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問3"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問3",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-004",
@@ -132,7 +138,9 @@
         },
         "note": "7ステップ改善の測定設計原則をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問4"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問4",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-005",
@@ -163,7 +171,9 @@
         },
         "note": "2016年問6と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問5"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問5",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-006",
@@ -194,7 +204,9 @@
         },
         "note": "SMS各プロセスの活動をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問6"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問6",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-007",
@@ -225,7 +237,9 @@
         },
         "note": "OCR欠落を元PDFから補正し、JIS X 0164-1の適用範囲をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問7"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問7",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-008",
@@ -256,7 +270,9 @@
         },
         "note": "2016年問8と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問8"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問8",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-009",
@@ -287,7 +303,9 @@
         },
         "note": "2021年問7と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問9"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問9",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-010",
@@ -323,7 +341,9 @@
         },
         "note": "設問欠落を元PDFから補正し、2016年問9と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問10"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問10",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-011",
@@ -354,7 +374,9 @@
         },
         "note": "2016年問10と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問11"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問11",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-012",
@@ -385,7 +407,9 @@
         },
         "note": "2021年問10と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問12"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問12",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-013",
@@ -416,7 +440,9 @@
         },
         "note": "2024年問11と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問13"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問13",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-014",
@@ -447,7 +473,9 @@
         },
         "note": "2021年問12と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問14"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問14",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-015",
@@ -478,7 +506,9 @@
         },
         "note": "有効性・効率性と取引承認統制を区別してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問15"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問15",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-016",
@@ -509,7 +539,9 @@
         },
         "note": "プロジェクト開始文書の目的と承認者をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問16"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問16",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-017",
@@ -540,7 +572,9 @@
         },
         "note": "EVMのSVと将来予測の違いをレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問17"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問17",
+      "questionType": "formula",
+      "calculationPattern": "EVM・開発見積り"
     },
     {
       "id": "2018-autumn-sm-am2-018",
@@ -571,7 +605,9 @@
         },
         "note": "クラッシングとファストトラッキングをレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問18"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問18",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-019",
@@ -602,7 +638,9 @@
         },
         "note": "2024年問21と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問19"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問19",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-020",
@@ -633,7 +671,9 @@
         },
         "note": "インタロックと他の安全・信頼性技法をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問20"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問20",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-021",
@@ -664,7 +704,9 @@
         },
         "note": "WHERE、GROUP BY、HAVINGの評価順をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問21"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問21",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-022",
@@ -695,7 +737,9 @@
         },
         "note": "2016年問22と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問22"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問22",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-023",
@@ -726,7 +770,9 @@
         },
         "note": "2021年問16と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問23"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問23",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-024",
@@ -757,7 +803,9 @@
         },
         "note": "2021年問17と照合してレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問24"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問24",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2018-autumn-sm-am2-025",
@@ -788,7 +836,9 @@
         },
         "note": "フェアユースと著作者人格権・権利管理をレビュー済み。"
       },
-      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問25"
+      "source": "平成30年度 秋期 ITサービスマネージャ試験 午前II 問25",
+      "questionType": "knowledge",
+      "calculationPattern": null
     }
   ]
 }

@@ -39,7 +39,9 @@
         },
         "note": "ITILサービスライフサイクル各段階をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問1"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問1",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-002",
@@ -70,7 +72,9 @@
         },
         "note": "添付表の全項目を重み付けしIPA正答表と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問2"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問2",
+      "questionType": "calculation",
+      "calculationPattern": "重み付け評価"
     },
     {
       "id": "2017-autumn-sm-am2-003",
@@ -101,7 +105,9 @@
         },
         "note": "方針、目的、KPI、個人目標の階層をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問3"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問3",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-004",
@@ -132,7 +138,9 @@
         },
         "note": "2015年問2と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問4"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問4",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-005",
@@ -163,7 +171,9 @@
         },
         "note": "2015年問11と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問5"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問5",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-006",
@@ -194,7 +204,9 @@
         },
         "note": "2015年問10と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問6"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問6",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-007",
@@ -225,7 +237,9 @@
         },
         "note": "リアクティブ・プロアクティブ可用性管理技法をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問7"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問7",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-008",
@@ -256,7 +270,9 @@
         },
         "note": "インシデント管理と問題管理の責任をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問8"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問8",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-009",
@@ -287,7 +303,9 @@
         },
         "note": "2023年問9と同一表を照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問9"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問9",
+      "questionType": "calculation",
+      "calculationPattern": "可用性・信頼性指標"
     },
     {
       "id": "2017-autumn-sm-am2-010",
@@ -318,7 +336,9 @@
         },
         "note": "再OCRで例題混入を除去し、SMSプロセス分類をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問10"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問10",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-011",
@@ -349,7 +369,9 @@
         },
         "note": "緊急変更、CMDB更新、切戻し規則をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問11"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問11",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-012",
@@ -380,7 +402,9 @@
         },
         "note": "2022年問7と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問12"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問12",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-013",
@@ -411,7 +435,9 @@
         },
         "note": "2023年問12と同一条件を再計算しレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問13"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問13",
+      "questionType": "calculation",
+      "calculationPattern": "日程・要員計画"
     },
     {
       "id": "2017-autumn-sm-am2-014",
@@ -442,7 +468,9 @@
         },
         "note": "2022年問13と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問14"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問14",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-015",
@@ -473,7 +501,9 @@
         },
         "note": "不正の実行・隠蔽を防ぐ相反職務の観点でレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問15"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問15",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-016",
@@ -504,7 +534,9 @@
         },
         "note": "プロジェクト資源管理文書を比較してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問16"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問16",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-017",
@@ -535,7 +567,9 @@
         },
         "note": "ディシジョンツリーの正味金額と確率を再計算してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問17"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問17",
+      "questionType": "calculation",
+      "calculationPattern": "期待金額価値"
     },
     {
       "id": "2017-autumn-sm-am2-018",
@@ -566,7 +600,9 @@
         },
         "note": "主要な分析技法を比較してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問18"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問18",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-019",
@@ -597,7 +633,9 @@
         },
         "note": "MLC、DRAM、ReRAM、SRAMの記憶原理をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問19"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問19",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-020",
@@ -628,7 +666,9 @@
         },
         "note": "SAN、DAS、NASを接続方式とプロトコルでレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問20"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問20",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-021",
@@ -659,7 +699,9 @@
         },
         "note": "Write Aheadの順序制約とREDO回復をレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問21"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問21",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-022",
@@ -695,7 +737,9 @@
         },
         "note": "2022年問24と添付図を照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問22"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問22",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-023",
@@ -726,7 +770,9 @@
         },
         "note": "XML署名、TLS、Ajax、ステガノグラフィを比較してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問23"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問23",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-024",
@@ -757,7 +803,9 @@
         },
         "note": "2024年問15と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問24"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問24",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2017-autumn-sm-am2-025",
@@ -788,7 +836,9 @@
         },
         "note": "2015年問25と照合してレビュー済み。"
       },
-      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問25"
+      "source": "平成29年度 秋期 ITサービスマネージャ試験 午前II 問25",
+      "questionType": "knowledge",
+      "calculationPattern": null
     }
   ]
 }

@@ -10,6 +10,7 @@ ITサービスマネージャ試験 午前IIのPDFを、静的な学習アプリ
 - アプリ実行時はIPAへアクセスせず、生成済みJSONを読み込みます。
 - 学習履歴、迷った記録、直前ミス、苦手問題の判定はブラウザのlocalStorageに保存します。
 - 全250問にITSM上の主カテゴリを一つ付与し、カテゴリ別の回答数・正解数・正答率・迷った回数を表示します。
+- 計算問題30問と公式・指標確認5問を分類し、全年度又は年度別、計算パターン別に出題できます。
 
 ## 過去10回分データの生成
 
@@ -90,6 +91,17 @@ python3 scripts/apply_explanations.py
 ```
 
 レビュー内容とOCR補正箇所は `data/explanations/REVIEW-2015-2019.md` 及び `data/explanations/REVIEW-2021-2024.md` に記録しています。
+
+## 計算問題の分類
+
+- 分類の正本は `data/calculations.json` です。
+- `questionType` は `calculation`（計算問題）、`formula`（公式・指標確認）、`knowledge`（通常問題）のいずれかです。
+- `calculationPattern` で、可用性・信頼性指標、日程・要員計画、EVM・開発見積りなどに分類しています。
+- 既存の試験JSONへ分類を再適用する場合は、次を実行します。
+
+```sh
+python3 scripts/apply_calculations.py
+```
 
 ## 現在の制約
 

@@ -39,7 +39,9 @@
         },
         "note": "Risk ITとISO 31000系の構成を比較してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問1"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問1",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-002",
@@ -70,7 +72,9 @@
         },
         "note": "サービスポートフォリオ内のパイプライン、カタログ、廃止済み区分をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問2"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問2",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-003",
@@ -106,7 +110,9 @@
         },
         "note": "添付図とITILサービスライフサイクルの標準順序を照合してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問3"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問3",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-004",
@@ -137,7 +143,9 @@
         },
         "note": "添付表の重み付き評価式とIPA正答表を照合してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問4"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問4",
+      "questionType": "calculation",
+      "calculationPattern": "重み付け評価"
     },
     {
       "id": "2015-autumn-sm-am2-005",
@@ -168,7 +176,9 @@
         },
         "note": "2022年の同種問題と照合しレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問5"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問5",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-006",
@@ -199,7 +209,9 @@
         },
         "note": "三つのキャパシティ管理の対象レベルをレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問6"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問6",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-007",
@@ -230,7 +242,9 @@
         },
         "note": "添付表の費用項目と使用期間を正答表に照合してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問7"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問7",
+      "questionType": "calculation",
+      "calculationPattern": "TCO・費用集計"
     },
     {
       "id": "2015-autumn-sm-am2-008",
@@ -261,7 +275,9 @@
         },
         "note": "OLA、UC、SLA、SLMの関係をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問8"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問8",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-009",
@@ -292,7 +308,9 @@
         },
         "note": "2023年問6と同一条件を再計算しレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問9"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問9",
+      "questionType": "calculation",
+      "calculationPattern": "可用性・信頼性指標"
     },
     {
       "id": "2015-autumn-sm-am2-010",
@@ -323,7 +341,9 @@
         },
         "note": "再OCRで例題混入を除去し、各プロセスの責任をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問10"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問10",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-011",
@@ -354,7 +374,9 @@
         },
         "note": "機能的エスカレーションと階層的エスカレーションを区別してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問11"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問11",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-012",
@@ -385,7 +407,9 @@
         },
         "note": "JIS Q 20000-1の関係プロセスにおける責任関係をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問12"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問12",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-013",
@@ -416,7 +440,9 @@
         },
         "note": "システム再開とデータベース回復方式を区別してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問13"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問13",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-014",
@@ -447,7 +473,9 @@
         },
         "note": "2021年問11の選択肢順を反映してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問14"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問14",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-015",
@@ -478,7 +506,9 @@
         },
         "note": "システム企画、開発、移行、運用の監査時点を区別してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問15"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問15",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-016",
@@ -514,7 +544,9 @@
         },
         "note": "添付関係図とプロジェクトの発注・実施主体を照合してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問16"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問16",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-017",
@@ -550,7 +582,9 @@
         },
         "note": "添付表のEVM値とEAC算式をIPA正答表に照合してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問17"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問17",
+      "questionType": "calculation",
+      "calculationPattern": "EVM・開発見積り"
     },
     {
       "id": "2015-autumn-sm-am2-018",
@@ -581,7 +615,9 @@
         },
         "note": "クラッシング、ファストトラッキング、クリティカルチェーンを比較してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問18"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問18",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-019",
@@ -612,7 +648,9 @@
         },
         "note": "SVCと外部・異常割込みの発生源をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問19"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問19",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-020",
@@ -643,7 +681,9 @@
         },
         "note": "RASIS五特性と対策の対応をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問20"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問20",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-021",
@@ -674,7 +714,9 @@
         },
         "note": "OLAPのダイス、ドリルダウン、ロールアップを比較してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問21"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問21",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-022",
@@ -705,7 +747,9 @@
         },
         "note": "ARP、RARP、DNS正引き・逆引きを区別してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問22"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問22",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-023",
@@ -736,7 +780,9 @@
         },
         "note": "真正性、信頼性、責任追跡性、否認防止をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問23"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問23",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-024",
@@ -767,7 +813,9 @@
         },
         "note": "MTPD、RTO、RPO、MTBFの時間指標を比較してレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問24"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問24",
+      "questionType": "knowledge",
+      "calculationPattern": null
     },
     {
       "id": "2015-autumn-sm-am2-025",
@@ -798,7 +846,9 @@
         },
         "note": "シュリンクラップ契約の成立行為をレビュー済み。"
       },
-      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問25"
+      "source": "平成27年度 秋期 ITサービスマネージャ試験 午前II 問25",
+      "questionType": "knowledge",
+      "calculationPattern": null
     }
   ]
 }
