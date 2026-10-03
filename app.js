@@ -17,6 +17,7 @@ const els = {
   calculationPatternSelect: document.querySelector("#calculationPatternSelect"),
   filterSummary: document.querySelector("#filterSummary"),
   startButton: document.querySelector("#startButton"),
+  resetExamButton: document.querySelector("#resetExamButton"),
   resetButton: document.querySelector("#resetButton"),
   exportHistoryButton: document.querySelector("#exportHistoryButton"),
   importHistoryButton: document.querySelector("#importHistoryButton"),
@@ -192,6 +193,7 @@ async function loadIndex() {
   }));
   state.examCache = Object.fromEntries(loaded);
   updateCalculationPatternOptions();
+  updateSelectedExamResetButton();
   renderStats();
 }
 
@@ -261,6 +263,60 @@ function allQuestions() {
 function questionsForSelectedExam() {
   if (els.examSelect.value === "all-exams") return allQuestions();
   return state.examCache[els.examSelect.value]?.questions || [];
+}
+
+function updateSelectedExamResetButton() {
+  const allExamsSelected = els.examSelect.value === "all-exams";
+  els.resetExamButton.disabled = allExamsSelected;
+  els.resetExamButton.title = allExamsSelected
+    ? "個別にクリアする試験回を選択してください。"
+    : "選択中の試験回の回答結果だけをクリアします。";
+}
+
+function resetSelectedExamResults() {
+  const examId = els.examSelect.value;
+  if (examId === "all-exams") return;
+
+  const questionIds = new Set(questionsForSelectedExam().map((question) => question.id));
+  const progress = readProgress();
+  const answerCount = [...questionIds].filter((id) => progress.answers?.[id]).length;
+  const weakCount = [...questionIds].filter((id) => progress.everWrong?.[id]).length;
+  const examTitle = state.exams.find((exam) => exam.id === examId)?.title || "選択中の試験回";
+
+  if (!answerCount && !weakCount && !(progress.lastWrong || []).some((id) => questionIds.has(id))) {
+    setHistoryStatus(`${examTitle}にクリアする回答結果はありません。`);
+    return;
+  }
+  if (!window.confirm(`${examTitle}の回答結果をクリアします。OCR確認マークは残ります。よろしいですか？`)) {
+    return;
+  }
+
+  questionIds.forEach((id) => {
+    delete progress.answers[id];
+    delete progress.everWrong[id];
+    delete state.sessionResults[id];
+  });
+  progress.lastWrong = (progress.lastWrong || []).filter((id) => !questionIds.has(id));
+  writeProgress(progress);
+
+  if (state.exam?.id === examId) {
+    buildQueue();
+    renderQuestion();
+  } else {
+    renderStats();
+    renderProgress();
+  }
+  setHistoryStatus(`${examTitle}の回答結果を${answerCount}件クリアしました。OCR確認マークは保持しています。`);
+}
+
+function resetAllProgress() {
+  if (!window.confirm("全年度の回答履歴とOCR確認マークを全てリセットします。よろしいですか？")) return;
+  writeProgress(emptyProgress());
+  state.sessionResults = {};
+  renderStats();
+  renderProgress();
+  renderQuestion();
+  setHistoryStatus("全年度の履歴をリセットしました。");
 }
 
 function matchingFilterCount() {
@@ -568,7 +624,10 @@ function bindEvents() {
     });
   });
 
-  els.examSelect.addEventListener("change", updateCalculationPatternOptions);
+  els.examSelect.addEventListener("change", () => {
+    updateCalculationPatternOptions();
+    updateSelectedExamResetButton();
+  });
   els.questionTypeSelect.addEventListener("change", () => {
     state.questionType = els.questionTypeSelect.value;
     state.calculationPattern = "all";
@@ -580,12 +639,8 @@ function bindEvents() {
   });
 
   els.startButton.addEventListener("click", start);
-  els.resetButton.addEventListener("click", () => {
-    writeProgress(emptyProgress());
-    state.sessionResults = {};
-    renderStats();
-    renderProgress();
-  });
+  els.resetExamButton.addEventListener("click", resetSelectedExamResults);
+  els.resetButton.addEventListener("click", resetAllProgress);
   els.ocrFlagButton.addEventListener("click", toggleOcrFlag);
   els.exportHistoryButton.addEventListener("click", exportHistory);
   els.importHistoryButton.addEventListener("click", () => {

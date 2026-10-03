@@ -186,8 +186,14 @@ select {
   color: var(--ink);
 }
 
+#resetExamButton,
 #resetButton {
   margin-top: 8px;
+}
+
+.ghost-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .history-actions {
